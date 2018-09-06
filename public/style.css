@@ -1,7 +1,16 @@
+.header{
+    font-weight: 900;
+    color: rgb(79, 79, 79);
+}
+
 .headline {
     color: darkcyan;
 }
 
 .link {
     color: cadetblue;
+}
+
+html {
+    background-color: whitesmoke;
 }

@@ -1,3 +1,8 @@
+ $(document).ready(function () {
+     $('.modal').modal();
+ });
+
+
 // Grab the articles as a json
 $.getJSON("/articles", function (data) {
     // For each one
@@ -6,11 +11,14 @@ $.getJSON("/articles", function (data) {
         $("#results").append(`
          <h2 class="headline" data-id= ${data[i]._id}> ${data[i].headline}</h2>
         <p class="link"> <a href= "${data[i].link}" target="_blank"> ${data[i].link}</a></p>
-        <button class="btn">Comment</button>
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Comment</a>
         `);
-        //TODO add a model for comments 
+        //TODO create delete function
     }
 });
+
+
+
 
 
 // Whenever someone clicks a p tag
