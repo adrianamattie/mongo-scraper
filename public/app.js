@@ -11,9 +11,9 @@ $.getJSON("/articles", function (data) {
         $("#results").append(`
          <h2 class="headline" data-id= ${data[i]._id}> ${data[i].headline}</h2>
         <p class="link"> <a href= "${data[i].link}" target="_blank"> ${data[i].link}</a></p>
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Comment</a>
+        <a class="waves-effect waves-light btn modal-trigger" id="notes" href="#modal1">Comment</a>
         `);
-        //TODO create delete function
+        
     }
 });
 
@@ -21,8 +21,8 @@ $.getJSON("/articles", function (data) {
 
 
 
-// Whenever someone clicks a p tag
-$(document).on("click", "p", function () {
+
+$(document).on("click", ".btn", function () {
     // Empty the notes from the note section
     $("#notes").empty();
     // Save the id from the p tag
